@@ -1,0 +1,586 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: #141414;
+  color: white;
+}
+
+/* =========================
+   NAVBAR (PADRÃO GLOBAL)
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+
+  background: #0d0d0d;
+  border-bottom: 1px solid #222;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* esquerda */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e50914;
+}
+
+/* menu */
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: white;
+}
+
+/* direita */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ícones */
+.icon {
+  width: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   BUSCA NAVBAR
+========================= */
+.busca-navbar {
+  display: flex;
+  align-items: center;
+
+  background: #222;
+  border-radius: 30px;
+
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.busca-navbar input {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  width: 180px;
+}
+
+.busca-navbar input::placeholder {
+  color: #aaa;
+}
+
+.busca-navbar button {
+  padding: 10px 15px;
+  border: none;
+  background: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.busca-navbar button:hover {
+  background: #ff1f1f;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  background: #111;
+  border-radius: 10px;
+
+  padding: 10px 0;
+  min-width: 180px;
+
+  display: none;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #e50914;
+}
+
+/* ativo */
+.dropdown-menu.ativo {
+  display: block;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  width: 100%;
+  height: 450px;
+  background: url("homemaranha.jpg") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+}
+
+/* =========================
+   GRID (PERFEITO)
+========================= */
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
+
+  width: 100%;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+.carrossel,
+.carrossel2,
+.carrossel3,
+.carrossel-trailers {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.item {
+  min-width: 160px;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.08);
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   SEÇÃO
+========================= */
+.carrossel-section {
+  margin: 30px;
+  padding: 20px;
+  background: linear-gradient(to right, #210d07, #b6210a);
+  border-radius: 15px;
+}
+
+.carrossel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   TABS
+========================= */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tabs button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #e50914;
+}
+
+/* =========================
+   TRAILERS
+========================= */
+.trailer-item {
+  min-width: 300px;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 999;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 900px;
+  margin: 5% auto;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 500px;
+}
+
+/* =========================
+   PAGINAÇÃO
+========================= */
+.paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.paginacao button {
+  padding: 10px 15px;
+  border: none;
+  background: #e50914;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .busca-navbar input {
+    width: 120px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* =========================
+   BUSCA HERO (HOME)
+========================= */
+.search-hero {
+  display: flex;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  border-radius: 40px;
+  overflow: hidden;
+
+  border: 1px solid #333;
+
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* input */
+.search-hero input {
+  flex: 1;
+  padding: 15px 20px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+/* placeholder */
+.search-hero input::placeholder {
+  color: #aaa;
+}
+
+/* botão */
+.search-hero button {
+  padding: 15px 25px;
+
+  border: none;
+  background: #e50914;
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover */
+.search-hero button:hover {
+  background: #ff1f1f;
+}
+
+/* efeito foco */
+.search-hero:focus-within {
+  border-color: #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+}
+/* =========================
+   BUSCA HERO (FUNCIONANDO)
+========================= */
+.search-box {
+  display: flex;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  border-radius: 40px;
+  overflow: hidden;
+
+  border: 1px solid #333;
+
+  max-width: 600px;
+  margin: 20px auto;
+
+  transition: 0.3s;
+}
+
+/* foco (efeito premium) */
+.search-box:focus-within {
+  border-color: #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+}
+
+/* input */
+.search-box input {
+  flex: 1;
+  padding: 15px 20px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+/* placeholder */
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+/* botão */
+.search-box button {
+  padding: 15px 25px;
+
+  border: none;
+  background: #e50914;
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover */
+.search-box button:hover {
+  background: #ff1f1f;
+}
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+}
+
+.login-box {
+  width: 350px;
+  padding: 30px;
+
+  background: #111;
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+
+  background: #222;
+  color: white;
+
+  outline: none;
+}
+
+.login-box input:focus {
+  border: 1px solid #e50914;
+}
+
+.login-box button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #ff1f1f;
+}
+
+.login-extra {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.login-extra a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.login-extra a:hover {
+  text-decoration: underline;
+}

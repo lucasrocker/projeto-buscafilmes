@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catálogo TMDB</title>
+
+<link rel="stylesheet" href="style2.css">
+<script src="function.js" defer></script>
+
+<!-- Fonte moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <div class="logo">🎬 Filmes</div>
+
+      <ul class="menu">
+        <li><a href="index.html">populares</a></li>
+        <li><a href="home.html">Início</a></li>
+
+        <li class="dropdown">
+          <a href="#" id="btnGeneros">Gêneros ▾</a>
+          <ul class="dropdown-menu" id="menuGeneros"></ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+
+      <div class="busca-navbar">
+        <input 
+          type="text"
+          id="buscaInput"
+          placeholder="Buscar filmes..."
+          onkeydown="if(event.key==='Enter') novaBusca()"
+        >
+        <button onclick="novaBusca()">Buscar</button>
+      </div>
+
+      <a href="usuario.php">
+        <img src="people.png" class="icon">
+      </a>
+
+    </div>
+
+  </nav>
+</header>
+
+<main class="layout-main">
+
+  <!-- GRID DE FILMES -->
+  <div id="grid" class="grid"></div>
+
+  <!-- DETALHES -->
+  <aside class="card-destaque">
+
+    <img id="detalhe-img">
+
+    <h2 id="detalhe-titulo"></h2>
+    <p id="detalhe-tagline" class="tagline"></p>
+    <p id="detalhe-desc"></p>
+
+    <div class="infos">
+      <p><b>📅 Lançamento:</b> <span id="detalhe-data"></span></p>
+      <p><b>⭐ Nota:</b> <span id="detalhe-nota"></span></p>
+      <p><b>⏱ Duração:</b> <span id="detalhe-duracao"></span></p>
+      <p><b>💰 Orçamento:</b> <span id="detalhe-budget"></span></p>
+      <p><b>💵 Receita:</b> <span id="detalhe-revenue"></span></p>
+      <p><b>🎭 Gêneros:</b> <span id="detalhe-generos"></span></p>
+    </div>
+
+    <h3>🎬 Elenco</h3>
+    <div id="detalhe-cast" class="cast"></div>
+
+    <h3>🎥 Trailer</h3>
+    <div id="detalhe-trailer"></div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

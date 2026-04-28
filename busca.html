@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Busca de Filmes</title>
+
+<link rel="stylesheet" href="style3.css">
+<script src="busca.js" defer></script>
+</head>
+
+<body>
+
+<!-- =========================
+   NAVBAR
+========================= -->
+<header>
+<nav class="navbar">
+
+  <div class="nav-left">
+    <div class="logo">🎬 Filmes</div>
+
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">Início</a></li>
+
+      <!-- PERFIL -->
+      <li><a href="perfil.php">Meu Perfil</a></li>
+
+      <!-- DROPDOWN GÊNEROS -->
+      <li class="dropdown">
+        <a href="#" id="btnGeneros">Gêneros ▾</a>
+
+        <ul class="dropdown-menu" id="menuGeneros">
+          <!-- JS preenche aqui -->
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <a href="usuario.php">
+    <img src="people.png" class="icon" alt="Perfil">
+  </a>
+
+  <!-- BUSCA NAVBAR -->
+  <div class="nav-right">
+    <div class="busca-navbar">
+      <input 
+        type="text"
+        id="buscaInput"
+        placeholder="Buscar filmes..."
+      >
+
+      <button onclick="novaBusca()">
+        Buscar
+      </button>
+    </div>
+  </div>
+
+</nav>
+</header>
+
+<!-- =========================
+   TÍTULO RESULTADO
+========================= -->
+<section class="carrossel-section">
+  <div class="carrossel-header">
+    <h2 id="tituloBusca">Resultados</h2>
+  </div>
+</section>
+
+<!-- =========================
+   GRID DE FILMES
+========================= -->
+<main>
+  <div id="grid" class="grid"></div>
+</main>
+
+<!-- =========================
+   PAGINAÇÃO
+========================= -->
+<div class="paginacao">
+  <button onclick="paginaAnterior()">⬅ Anterior</button>
+
+  <span id="paginaAtual">Página 1</span>
+
+  <button onclick="proximaPagina()">Próxima ➡</button>
+</div>
+
+</body>
+</html>

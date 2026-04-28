@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <div class="logo">🎬 Filmes</div>
+
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Início</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <a href="login.html">
+        <img src="people.png" class="icon">
+      </a>
+    </div>
+
+  </nav>
+</header>
+
+<!-- LOGIN -->
+<main class="login-container">
+
+  <div class="login-box">
+
+    <h1>Entrar</h1>
+
+    <form action="php/login.php" method="POST" class="login-form">
+
+      <input type="email" name="email" placeholder="Email" required>
+
+      <input type="password" name="senha" placeholder="Senha" required>
+
+      <button type="submit">Entrar</button>
+
+    </form>
+
+    <p class="login-extra">
+      Não tem conta?
+      <a href="cadastro.html">Criar agora</a>
+    </p>
+
+  </div>
+
+</main>
+
+</body>
+</html>

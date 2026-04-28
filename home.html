@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catálogo de Filmes</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="function.js" defer></script>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <div class="logo">🎬 Filmes</div>
+
+      <ul class="menu">
+        <li><a href="index.html">populares</a></li>
+        <li><a href="home.html">Início</a></li>
+
+        <!-- DROPDOWN -->
+        <li class="dropdown">
+          <a href="#" id="btnGeneros">Gêneros ▾</a>
+          <ul class="dropdown-menu" id="menuGeneros"></ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+
+      <!-- BUSCA NAVBAR -->
+      <div class="busca-navbar">
+        <input 
+          type="text"
+          id="buscaInput"
+          placeholder="Buscar filmes..."
+          onkeydown="if(event.key==='Enter') novaBusca()"
+        >
+        <button onclick="novaBusca()">Buscar</button>
+      </div>
+
+      <a href="usuario.php">
+        <img src="people.png" class="icon">
+      </a>
+
+    </div>
+
+  </nav>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Bem-vindo(a)</h1>
+    <p>Milhões de Filmes, Séries e Pessoas para descobrir.</p>
+
+    <div class="search-box">
+
+      <input 
+        type="text"
+        id="buscaHero"
+        placeholder="Buscar por um filme..."
+        onkeydown="if(event.key==='Enter') buscarHero()"
+      >
+
+      <button onclick="buscarHero()">Buscar</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     CARROSSEL DESTAQUE
+========================= -->
+<section class="carrossel-section">
+
+  <div class="carrossel-header">
+    <h2>Filmes em Destaque</h2>
+  </div>
+
+  <div class="carrossel"></div>
+
+</section>
+
+<!-- =========================
+     TRAILERS
+========================= -->
+<section class="carrossel-section">
+
+  <div class="carrossel-header">
+    <h2>Últimos Trailers</h2>
+  </div>
+
+  <div class="carrossel-trailers"></div>
+
+</section>
+
+<!-- =========================
+     POPULARES / STREAMING
+========================= -->
+<section class="carrossel-section">
+
+  <div class="carrossel-header">
+
+    <h2>Os Mais Populares</h2>
+
+    <div class="tabs">
+      <button onclick="carregarStreaming('streaming', this)">Streaming</button>
+      <button onclick="carregarStreaming('tv', this)">Na TV</button>
+      <button onclick="carregarStreaming('rent', this)">Alugar</button>
+      <button onclick="carregarStreaming('cinema', this)">Cinema</button>
+    </div>
+
+  </div>
+
+  <div class="carrossel carrossel2"></div>
+
+</section>
+
+<!-- =========================
+     GRÁTIS
+========================= -->
+<section class="carrossel-section">
+
+  <div class="carrossel-header">
+
+    <h2>Grátis para assistir</h2>
+
+    <div class="tabs">
+      <button onclick="carregargratis('filmes')">Filmes</button>
+      <button onclick="carregargratis('series')">Séries</button>
+    </div>
+
+  </div>
+
+  <div class="carrossel carrossel3"></div>
+
+</section>
+
+<!-- =========================
+     MODAL TRAILER
+========================= -->
+<div id="modalTrailer" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">✖</span>
+    <iframe id="videoFrame" allowfullscreen></iframe>
+  </div>
+</div>
+
+</body>
+</html>
